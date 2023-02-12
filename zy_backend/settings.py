@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-8_-mp7t5s^qb2jd9w)h-5y+a=#2o_lr#rvp4as+#7j+23df8c+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["zy-yu9w.onrender.com","localhost"]
 
 
 # Application definition
@@ -74,8 +74,6 @@ WSGI_APPLICATION = 'zy_backend.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
-
 
 DATABASES = {
     'default': dj_database_url.parse(str(os.environ.get("DATABASE_URL")))
