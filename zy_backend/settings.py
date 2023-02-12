@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ["zy-yu9w.onrender.com","localhost"]
 # Application definition
 
 INSTALLED_APPS = [
+    'apis.apps.ApisConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
