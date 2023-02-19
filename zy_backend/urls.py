@@ -16,12 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from rest_framework import routers
 
-from apis import views
+from apis import old_views
+from apis.views.tests import TestViewset
+
+router = routers.DefaultRouter()
+router.register(r'testing',TestViewset)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('test/',views.index)
+    path('api/', include(router.urls)),
+    path('admin/', admin.site.urls)
 ]
 
 urlpatterns += staticfiles_urlpatterns()
