@@ -77,16 +77,21 @@ WSGI_APPLICATION = 'zy_backend.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-if os.environ.get("DEV_ENV") == 0:
-    DATABASES = {
+# if os.environ.get("DEV_ENV") == 0:
+#     DATABASES = {
+#         'default': dj_database_url.parse(str(os.environ.get("DATABASE_URL")))
+#     }
+# else:
+#     DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': 'db',
+#         }
+#     }
+
+# ! for now let's connect to the same database
+DATABASES = {
         'default': dj_database_url.parse(str(os.environ.get("DATABASE_URL")))
-    }
-else:
-    DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'db',
-        }
     }
 
 
